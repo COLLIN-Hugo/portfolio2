@@ -112,3 +112,15 @@ function theme_enqueue_assets() {
 add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
 
 
+//JS POUR LE HEADER
+// Enqueue le script pour l'animation du header
+function enqueue_header_animation_script() {
+    wp_enqueue_script(
+        'header-animation', // Nom du script
+        get_template_directory_uri() . '/js/menu.js', // Chemin du fichier JS
+        array(), // Aucune dépendance
+        null, // Pas de version spécifique
+        true // Charger dans le footer pour de meilleures performances
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_header_animation_script');

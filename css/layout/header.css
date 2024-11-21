@@ -66,3 +66,20 @@
   filter: invert(59%) sepia(79%) saturate(6640%) hue-rotate(253deg) brightness(102%) contrast(101%);
 }
 
+
+/* Animation du header */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  animation: slideInDown 1s ease-out forwards; /* Animation par défaut */
+  opacity: 0; /* Initialement invisible */
+}

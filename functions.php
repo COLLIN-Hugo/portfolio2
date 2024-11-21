@@ -124,3 +124,10 @@ function enqueue_header_animation_script() {
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_header_animation_script');
+
+
+//ajout de alpine JS
+function enqueue_alpine_script() {
+    wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js', array(), '3.x.x', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_alpine_script');

@@ -84,6 +84,8 @@
   opacity: 0; /* Initialement invisible */
 }
 
+
+
 /* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
@@ -93,14 +95,12 @@
    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░*/
 
    .header {
-    background-color: var(--color-dark-blue); /* Couleur de fond */
+    background-color: var(--noir); /* Couleur de fond */
     padding: var(--spacing-lg) var(--spacing-xl);
     border-bottom-right-radius: var(--spacing-xl); /* Coin en bas à droite avec un radius */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    z-index: 1000;
     transition: all 0.4s ease-in-out;
 }
 
@@ -161,7 +161,7 @@
 
 .menu-item a,
 .header__secondary-nav a {
-    color: var(--color-white);
+    color: var(--blanc);
     text-decoration: none;
     font-weight: var(--font-weight-bold);
     transition: color 0.3s ease;
@@ -169,11 +169,11 @@
 
 .menu-item a:hover,
 .header__secondary-nav a:hover {
-    color: var(--color-light-blue);
+    color: var(--violet);
 }
 
 .current-menu-item > a {
-    color: var(--color-light-blue); /* Couleur d'accentuation bleue claire pour la page active */
+    color: var(--violet); /* Couleur d'accentuation bleue claire pour la page active */
 }
 
 /* ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -202,7 +202,7 @@
     position: relative;
     width: 100%;
     height: 2.5px; /* Réduire l'épaisseur des lignes */
-    background-color: var(--color-white);
+    background-color: var(--blanc);
     border-radius: 4px; /* Coins arrondis des lignes */
     transition: background-color 0.3s ease-in-out;
 }
@@ -214,7 +214,7 @@
     left: 0;
     width: 36px;
     height: 2.5px; /* Réduire l'épaisseur des lignes */
-    background-color: var(--color-white);
+    background-color: var(--blanc);
     border-radius: 4px; /* Coins arrondis des lignes */
     transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
 }
@@ -253,29 +253,29 @@
 .header__secondary-nav a {
     transition: 0.3s ease;
     padding: 14px var(--spacing-md);
-    background-color: var(--color-light-blue);
+    background-color: var(--violet);
     border-radius: var(--spacing-sm);
-    border: 1px solid var(--color-light-blue);
+    border: 1px solid var(--violet);
 }
 
 .header__secondary-nav a:nth-child(1) {
-    color: var(--color-white);
+    color: var(--blanc);
 }
 
 .header__secondary-nav a:nth-child(2) {
-    color: var(--color-dark-blue);
-    background-color: var(--color-white);
-    border: 1px solid var(--color-white);
+    color: var(--noir);
+    background-color: var(--blanc);
+    border: 1px solid var(--blanc);
 }
 
 .header__secondary-nav a:nth-child(1):hover {
-    background-color: var(--color-dark-blue);
-    color: var(--color-light-blue);
+    background-color: var(--noir);
+    color: var(--violet);
 }
 
 .header__secondary-nav a:nth-child(2):hover {
-    background-color: var(--color-dark-blue);
-    color: var(--color-white);
+    background-color: var(--noir);
+    color: var(--blanc);
 }
 
 .header__menu-toggle.menu-btn--open .menu-btn__hamburger {
@@ -304,81 +304,68 @@
     overflow: hidden;
 }
 
+
 @media (max-width: 1024px) {
   
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-       Styles du header et du menu - Tablette et mobile
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    .header.menu--open::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: var(--color-dark-blue);
-      z-index: 700;
-    }
-    .header__nav {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      z-index: 800;
-      transition: all 0.4s ease;
-    }
-    .header__nav.open,
-    .header__secondary-nav.open {
-      display: flex;
-    }
-    .header__menu {
-      flex-direction: column;
-      gap: var(--spacing-lg);
-      align-items: flex-start;
-      font-size: 1.5rem;
-    }
-    .header__secondary-nav {
-      display: none;
-      background-color: var(--color-dark-blue);
-      z-index: 1000;
-      position: fixed;
-      bottom: 5dvh;
-      left: 15dvw;
-    }
-    .header__menu-toggle {
-      display: flex;
-    }
-    .header__nav {
-      display: none;
-      position: absolute;
-      top: 50vh;
-      width: 90vw;
-    }
-    .header__nav.menu--open {
-      display: flex;
-    }
-    .header__secondary-nav.menu--open {
-      display: flex;
-      width: 70dvw;
-      justify-content: space-between;
-    }
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     Styles du header et du menu - Tablette et mobile
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  .header.menu--open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--noir);
+    z-index: 700;
+  }
+  .header__nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 800;
+    transition: all 0.4s ease;
+  }
+  .header__nav.open,
+  .header__secondary-nav.open {
+    display: flex;
+  }
+  .header__menu {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+    font-size: 1.5rem;
+  }
+  .header__secondary-nav {
+    display: none;
+    background-color: var(--noir);
+    z-index: 1000;
+    position: fixed;
+    bottom: 5dvh;
+    left: 15dvw;
+  }
+  .header__menu-toggle {
+    display: flex;
+  }
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 50vh;
+    width: 90vw;
+  }
+  .header__nav.menu--open {
+    display: flex;
+  }
+  .header__secondary-nav.menu--open {
+    display: flex;
+    width: 70dvw;
+    justify-content: space-between;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

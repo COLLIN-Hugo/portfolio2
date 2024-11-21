@@ -1,0 +1,227 @@
+/* Assurer que le hero dépasse les marges globales */
+.hero-section {
+    position: relative;
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw; /* Élimine les marges */
+    margin-right: -50vw; /* Élimine les marges */
+    height: 100vh; /* Full height */
+    background-size: cover; /* L'image couvre tout l'écran */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Pas de répétition */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin-top: -150px;
+  }
+  
+  .hero-title {
+    font-size: 6rem; /* Taille du titre */
+    color: var(--blanc);
+    font-family: var(--baloo);
+    margin: 0 100px 10px 100px; /* Marges gauche et droite de 100px, espace réduit en bas */
+}
+
+.hero-subtitle {
+    font-size: 2.5rem; /* Taille du sous-titre */
+    color: var(--blanc);
+    margin: 0 100px 30px 100px; /* Marges gauche et droite de 100px, espace réduit au-dessus */
+    margin-bottom: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 27, 34, 0.4); 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-end;
+}
+
+  
+  .hero-button {
+    padding: 15px 30px;
+    background-color: var(--violet);
+    color: var(--blanc);
+    text-decoration: none;
+    font-family: var(--baloo);
+    font-weight: var(--bold);
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: var(--blanc);
+    color: var(--violet);
+  }
+  
+
+
+/* Conteneur principal */
+.scrolling-text {
+    width: 100%; /* Prend toute la largeur */
+    overflow: hidden; /* Cache le texte hors de la zone visible */
+    background-color: rgba(131, 60, 242, 0.5); /* Overlay violet semi-transparent */
+    padding: 10px 0; /* Espacement vertical */
+    position: relative; /* Pour contenir le contenu défilant */
+    color: var(--blanc); /* Texte blanc */
+    display: flex; /* Important pour aligner correctement */
+    align-items: center;
+}
+
+/* Contenu défilant */
+.scrolling-content {
+    display: flex; /* Permet d'afficher les spans à la suite */
+    white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+    animation: scroll-infinite 35s linear infinite; /* Animation continue */
+    font-size: 1rem; /* Taille du texte */
+    font-family: var(--baloo); /* Police utilisée */
+    font-weight: var(--bold); /* Gras */
+}
+
+.type a {
+    display: inline-block;
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    z-index: 2;
+    padding: 10px 10px 110px;
+    color: var(--blanc);
+    font-size: 14px;
+    font-family: var(--inter);
+    line-height: 1;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    writing-mode: vertical-lr;
+    transition: .2s;
+    overflow: hidden;
+    margin-bottom: 60px;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      height: 100px;
+      background: var(--blanc);
+    }
+    &:hover {
+      opacity: .5;
+    }
+  }
+  
+  #type01 a::after {
+    animation: sdl01 2.5s cubic-bezier(1, 0, 0, 1) infinite;
+  }
+  @keyframes sdl01 {
+    0% {
+      transform: scale(1, 0);
+      transform-origin: 0 0;
+    }
+    50% {
+      transform: scale(1, 1);
+      transform-origin: 0 0;
+    }
+    50.1% {
+      transform: scale(1, 1);
+      transform-origin: 0 100%;
+    }
+    100% {
+      transform: scale(1, 0);
+      transform-origin: 0 100%;
+    }
+  }
+
+
+
+
+/* Animation de défilement infini */
+@keyframes scroll-infinite {
+    from {
+        transform: translateX(0); /* Départ à gauche */
+    }
+    to {
+        transform: translateX(-50%); /* Déplacement de la moitié */
+    }
+}
+
+/* Ajuste les spans pour qu'ils se collent parfaitement */
+.scrolling-content span {
+    flex-shrink: 0; /* Empêche la réduction de taille */
+    padding-right: 2rem; /* Espacement entre chaque cycle de texte */
+}
+
+
+/* Animation fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation fade-in pour le scrolling text */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Classes pour animer les éléments */
+.hero-title,
+.hero-subtitle,
+.scrolling-text {
+  opacity: 0; /* Initialement invisible */
+  transform: translateY(50px); /* Déplacé vers le bas */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-title.fade-in {
+  animation: fadeInUp 1s forwards;
+}
+
+.hero-subtitle.fade-in {
+  animation: fadeInUp 1.2s forwards; /* Début légèrement décalé */
+}
+
+.scrolling-text.fade-in {
+  animation: fadeInLeft 1.5s forwards; /* Animation de gauche */
+}
+
+
+/* Animation fadeInUp */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Départ avec un léger décalage vers le bas */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Arrive à sa position normale */
+    }
+}
+
+/* Appliquer fadeInUp au bouton */
+.type a {
+    animation: fadeInUp 1.5s ease-out forwards; /* Durée plus courte pour un effet fluide */
+    opacity: 0; /* Invisible au départ */
+    transform: translateY(50px); /* Correspond au point de départ de l'animation */
+}
+
+

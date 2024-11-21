@@ -1,0 +1,93 @@
+/* Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--gris);
+    border-radius: 30px;
+    padding: 1.5rem;
+    color: var(--blanc);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+    /* Invisible par défaut */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px) rotate(-1deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(145deg, var(--violet), var(--violet));
+    background-size: 300% 300%;
+    animation: gradientAnimation 3s ease infinite;
+}
+
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Card Icon */
+.card-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect on Icon */
+.card:hover .card-icon img {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+/* Card Text */
+.card-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--blanc);
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects on Text */
+.card:hover .card-title {
+    color: var(--blanc);
+}
+
+.card:hover .card-text {
+    color: var(--blanc);
+}
+
+/* Animation d'apparition */
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+

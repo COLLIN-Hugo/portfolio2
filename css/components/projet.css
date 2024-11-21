@@ -1,0 +1,92 @@
+.galeries {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 900px;
+    max-width: 950px;
+    width: calc(100% - 100px);
+    height: 450px;
+    margin: auto;
+    padding: 6px;
+}
+
+.galerie {
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    background: var(--optionBackground, #E6E9ED);
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: flex-grow 0.5s ease, transform 0.5s ease, background-size 0.5s ease;
+    flex-grow: 1;
+    border-radius: 30px;
+}
+
+.galerie.active {
+    flex-grow: 10;
+    transform: scale(1.02);
+    max-width: 700px;
+    margin: 0px;
+    border-radius: 40px;
+    background-size: auto 100%;
+    z-index: 10; /* Priorité pour la card active */
+}
+
+.galerie .galerie-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: block;
+    text-decoration: none;
+}
+
+.galerie:not(.active) .galerie-link {
+    pointer-events: none; /* Désactive le clic sur les cards non actives */
+}
+
+.galerie .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    box-shadow: inset 0 -120px 120px -120px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.5s ease;
+}
+
+.galerie .label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: flex-start;
+    color: white;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Masquer par défaut */
+    transition: opacity 0.3s ease;
+}
+
+.galerie.active .label {
+    opacity: 1; /* Afficher lorsque l'option est active */
+    transition: opacity 0.3s ease;
+}
+
+.label .info {
+    color: var(--blanc);
+}
+
+.info .main {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.info .sub {
+    font-size: 0.9rem;
+}
+  

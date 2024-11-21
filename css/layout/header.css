@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative; /* Le header reste au-dessus */
+  z-index: 10; /* S'assurer que le header est devant l'image */
+  width: 100%; /* Full width */
+}
+
+.logo img {
+  width: 40px;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu_principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  border: 2px solid var(--blanc);
+  border-radius: 30px;
+  padding: 10px 40px;
+  gap: 50px;
+  background-color: var(--noir);
+}
+
+.nav-menu li {
+  margin: 0 15px;
+}
+
+.nav-menu li a {
+  color: var(--blanc);
+  text-decoration: none;
+  gap: 40px;
+  font-family: var(--baloo);
+  font-weight: var(--bold);
+}
+
+.nav-menu li a:hover {
+  color: var(--violet);
+}
+
+.social-icons {
+  height: 24px;
+  display: flex;
+  gap: 35px;
+}
+
+.social-icons>a>img {
+  height: 24px;
+}
+
+.social-icons a:hover img {
+  filter: invert(59%) sepia(79%) saturate(6640%) hue-rotate(253deg) brightness(102%) contrast(101%);
+}
+

@@ -1,0 +1,118 @@
+.contact-card {
+    background-color: var(--gris); 
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center; 
+}
+
+.contact-title {
+    font-family: var(--baloo);
+    font-size: 1.8rem;
+    color: var(--blanc);
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; 
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    font-family: var(--baloo);
+    font-weight: var(--bold);
+    font-size: 1rem;
+    color: var(--blanc);
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+input, textarea {
+    padding: 10px;
+    font-family: var(--inter);
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1e252c;
+    color: var(--blanc);
+    width: 100%; 
+    max-width: 600px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #888; 
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border: 1px solid var(--violet);
+}
+
+.submit-button {
+    padding: 15px 50px; 
+    font-family: var(--baloo);
+    font-weight: var(--bold);
+    font-size: 1.3rem;
+    color: var(--blanc);
+    background-color: var(--violet);
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    text-align: center; 
+    width: auto;
+    margin: 0 auto; 
+    margin-top: 30px;
+    align-self: center; 
+}
+
+.submit-button:hover {
+    background-color: #6a2db9; 
+    transform: scale(1.05); 
+}
+
+.submit-button:focus {
+    outline: 2px solid #6a2db9; 
+    outline-offset: 3px;
+}
+
+
+/* Animation fade-in-up */
+@keyframes fadeInUpOnScroll {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Position initiale */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Position finale */
+    }
+}
+
+/* Classe pour les éléments invisibles par défaut */
+.scroll-animate {
+    opacity: 0; /* Rendre invisible par défaut */
+    transform: translateY(50px); /* Déplacement initial */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition fluide */
+}
+
+/* Classe déclenchant l'animation */
+.scroll-animate.visible {
+    animation: fadeInUpOnScroll 0.8s ease-out forwards;
+}
+
+
+
+  

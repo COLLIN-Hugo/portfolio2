@@ -36,42 +36,12 @@ function create_project_taxonomy() {
 }
 add_action('init', 'create_project_taxonomy');
 
+
 function theme_enqueue_styles() {
     wp_enqueue_style('single-projet', get_template_directory_uri() . '/css/single-projet.css');
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
-
-//contact
-function handle_contact_form() {
-    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
-        $name = sanitize_text_field($_POST['name']);
-        $email = sanitize_email($_POST['email']);
-        $message = sanitize_textarea_field($_POST['message']);
-
-        $to = get_option('admin_email'); // Envoi vers l'email de l'administrateur
-        $subject = "Nouveau message de contact de $name";
-        $body = "Nom: $name\nEmail: $email\nMessage:\n$message";
-        $headers = array('Content-Type: text/plain; charset=UTF-8');
-
-        wp_mail($to, $subject, $body, $headers);
-
-        // Redirection après soumission
-        wp_redirect(home_url('/merci/')); // Crée une page "merci" si tu veux une confirmation
-        exit;
-    }
-}
-add_action('admin_post_nopriv_submit_contact_form', 'handle_contact_form');
-add_action('admin_post_submit_contact_form', 'handle_contact_form');
-
-
-
-//js
-function enqueue_custom_scripts() {
-    wp_enqueue_style('main-style', get_template_directory_uri() . '/css/components/skills.css', array(), '1.0.0');
-    wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 
 //JS POUR LES COMPETENCES
@@ -93,10 +63,7 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_assets');
 
 //JS POUR LES TITRES
 function enqueue_title_assets() {
-    // Charger le fichier CSS
     wp_enqueue_style('title-css', get_template_directory_uri() . '/css/layout/title.css', [], false, 'all');
-
-    // Charger le fichier JavaScript
     wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', [], false, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_title_assets');
@@ -104,23 +71,20 @@ add_action('wp_enqueue_scripts', 'enqueue_title_assets');
 
 //JS POUR LE HERO
 function theme_enqueue_assets() {
-    // Autres scripts et styles
     wp_enqueue_style('theme-style', get_stylesheet_uri());
-    // Ajout du script pour les animations
     wp_enqueue_script('hero-animations', get_template_directory_uri() . '/js/hero.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
 
 
 //JS POUR LE HEADER
-// Enqueue le script pour l'animation du header
 function enqueue_header_animation_script() {
     wp_enqueue_script(
-        'header-animation', // Nom du script
-        get_template_directory_uri() . '/js/menu.js', // Chemin du fichier JS
-        array(), // Aucune dépendance
-        null, // Pas de version spécifique
-        true // Charger dans le footer pour de meilleures performances
+        'header-animation', 
+        get_template_directory_uri() . '/js/menu.js', 
+        array(), 
+        null, 
+        true 
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_header_animation_script');
@@ -131,3 +95,40 @@ function enqueue_alpine_script() {
     wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js', array(), '3.x.x', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_alpine_script');
+
+
+//JS POUR CONTACT
+function enqueue_scroll_animation_script() {
+    wp_enqueue_script(
+        'scroll-animation', // Nom unique du script
+        get_template_directory_uri() . '/js/contact.js', // Chemin vers le fichier JS
+        array(), // Pas de dépendances
+        '1.0', // Version
+        true // Charger dans le footer
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_scroll_animation_script');
+
+
+//JS POUR LE FOOTER
+function custom_footer_assets() {
+    // Ajouter le fichier CSS pour le footer
+    wp_enqueue_style(
+        'footer-style', 
+        get_template_directory_uri() . '/css/layout/footer.css', 
+        array(), 
+        '1.0', 
+        'all'
+    );
+
+    // Ajouter le fichier JS pour le bouton de retour en haut
+    wp_enqueue_script(
+        'footer-script', 
+        get_template_directory_uri() . 'js/footer.js', 
+        array(), 
+        '1.0', 
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'custom_footer_assets');
+

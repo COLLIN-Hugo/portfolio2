@@ -111,24 +111,9 @@ add_action('wp_enqueue_scripts', 'enqueue_scroll_animation_script');
 
 
 //JS POUR LE FOOTER
-function custom_footer_assets() {
-    // Ajouter le fichier CSS pour le footer
-    wp_enqueue_style(
-        'footer-style', 
-        get_template_directory_uri() . '/css/layout/footer.css', 
-        array(), 
-        '1.0', 
-        'all'
-    );
-
-    // Ajouter le fichier JS pour le bouton de retour en haut
-    wp_enqueue_script(
-        'footer-script', 
-        get_template_directory_uri() . 'js/footer.js', 
-        array(), 
-        '1.0', 
-        true
-    );
+function enqueue_footer_scroll_animation() {
+    wp_enqueue_script('footer-scroll-animation', get_template_directory_uri() . '/js/footer.js', [], false, true);
 }
-add_action('wp_enqueue_scripts', 'custom_footer_assets');
+add_action('wp_enqueue_scripts', 'enqueue_footer_scroll_animation');
+
 

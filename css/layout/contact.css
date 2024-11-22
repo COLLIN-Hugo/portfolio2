@@ -2,7 +2,6 @@
     background-color: var(--gris); 
     padding: 30px;
     border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     margin: 20px auto;
     text-align: center; 
@@ -33,18 +32,18 @@
 label {
     font-family: var(--baloo);
     font-weight: var(--bold);
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--blanc);
     margin-bottom: 10px;
     text-align: left; 
 }
 
 input, textarea {
-    padding: 10px;
+    padding: 15px;
     font-family: var(--inter);
     font-size: 1rem;
     border: 1px solid #444;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #1e252c;
     color: var(--blanc);
     width: 100%; 
@@ -68,7 +67,7 @@ input:focus, textarea:focus {
     color: var(--blanc);
     background-color: var(--violet);
     border: none;
-    border-radius: 8px; 
+    border-radius: 30px; 
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease; 
     text-align: center; 
@@ -116,3 +115,40 @@ input:focus, textarea:focus {
 
 
   
+@media screen and (max-width: 768px) {
+    .contact-card {
+        padding: 20px;
+        border-radius: 20px;
+        max-width: 90%; /* Adapte la largeur à l'écran */
+        margin: 10px auto;
+        box-sizing: border-box; /* Évite les débordements */
+    }
+
+    .contact-form {
+        gap: 15px; /* Réduit l'espacement entre les champs */
+        width: 100%; /* S'assure que le formulaire occupe toute la largeur */
+    }
+
+    .form-group {
+        width: 100%; /* Les champs prennent toute la largeur */
+        max-width: 100%; /* Évite les débordements */
+    }
+
+    input, textarea {
+        padding: 10px; /* Réduit légèrement le padding */
+        font-size: 0.9rem; /* Taille de police adaptée */
+        border-radius: 5px;
+        width: 100%; /* Respecte la largeur du conteneur */
+        box-sizing: border-box; /* Inclut le padding dans la largeur */
+    }
+
+    .submit-button {
+        padding: 10px 20px; /* Ajuste la taille du bouton */
+        font-size: 1.1rem; /* Réduit la taille de la police */
+        border-radius: 20px; /* Rondit un peu plus les coins */
+        max-width: 100%; /* Le bouton s'adapte à la largeur */
+        width: 100%; /* Remplit toute la largeur du conteneur */
+        margin-top: 20px;
+    }
+}
+

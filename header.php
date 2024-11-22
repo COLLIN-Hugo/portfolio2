@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="scroll">
       <div class="menu-header">
         <!-- Logo -->
         <a href="<?php echo home_url(); ?>" class="logo">

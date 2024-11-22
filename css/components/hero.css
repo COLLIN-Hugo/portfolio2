@@ -225,3 +225,29 @@
 }
 
 
+
+
+@media screen and (max-width: 768px) {
+  .hero-title {
+      font-size: 4rem; /* Réduit la taille du texte */
+      margin: 0 20px; /* Rapproche les marges sur mobile */
+      text-align: left; /* Aligne à gauche */
+  }
+
+  .hero-subtitle {
+      font-size: 1.8rem; /* Taille réduite pour le sous-titre */
+      margin: 10px 20px; /* Réduit l'espacement autour du sous-titre */
+      text-align: left; /* Aligne à gauche */
+      margin-bottom: 100px;
+  }
+
+
+  .scrolling-text {
+      font-size: 0.9rem; /* Réduit la taille du texte défilant */
+      padding: 5px 0; /* Moins de padding pour économiser l'espace */
+  }
+
+  .type a {
+    text-align: right; /* Aligne à gauche */
+  }
+}

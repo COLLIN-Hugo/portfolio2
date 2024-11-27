@@ -21,12 +21,9 @@ get_header(); ?>
 </div>
 
 
-
-<div class="project-concept-container">
-    <!-- Titre de la section -->
-    <h2 class="custom-project-title"><?php the_field('titre_2'); ?></h2>
-
-    <!-- Grid pour les images et mots-clés -->
+<div class="styled-title-container">
+    <h2 class="styled-title"><?php the_field('titre_2'); ?></h2>
+</div>
     <div class="concept-grid">
         <?php if (get_field('image_1')) : ?>
             <div class="concept-item large">
@@ -58,7 +55,7 @@ get_header(); ?>
             </div>
         <?php endif; ?>
     </div>
-
+</div>
     <!-- Conteneur pour les mots-clés -->
     <div class="project-keywords">
         <?php if (get_field('mot-cle_1')) : ?>
@@ -77,8 +74,6 @@ get_header(); ?>
 
     <!-- Description -->
     <p class="project-description"><?php the_field('description_2'); ?></p>
-</div>
-
 
 
 
@@ -102,13 +97,5 @@ get_header(); ?>
         <?php endif; ?>
     </div>
 </div>
-
-
-
-
-
-
-
-
 
 <?php get_footer(); ?>

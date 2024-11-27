@@ -12,7 +12,7 @@
       <div class="menu-header">
         <!-- Logo -->
         <a href="<?php echo home_url(); ?>" class="logo">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Mon logo">
+          <img src="<?php echo get_template_directory_uri(); ?>/icons/logo-portfolio.svg" alt="Mon logo">
         </a>
       
 
@@ -31,10 +31,10 @@
         <!-- Icônes des réseaux sociaux -->
         <div class="social-icons">
           <a href="https://www.behance.net/hugocolllin" target="_blank">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/behance.png" alt="Logo de Behance">
+            <img src="<?php echo get_template_directory_uri(); ?>/icons/behance.svg" alt="Logo de Behance">
           </a>
           <a href="https://www.linkedin.com/in/hugo-collin-73ab20284/" target="_blank">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/linkedin.png" alt="Logo de LinkedIn">
+            <img src="<?php echo get_template_directory_uri(); ?>/icons/linkedin.svg" alt="Logo de LinkedIn">
           </a>
         </div>
       </div>

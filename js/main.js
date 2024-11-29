@@ -1,4 +1,3 @@
-
 //CARDS COMPETENCES
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".card");
@@ -9,12 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("visible");
 
-                    // Arrête d'observer après animation pour améliorer les performances
                     observer.unobserve(entry.target);
                 }
             });
         },
-        { threshold: 0.2 } // 20% visible avant déclenchement
+        { threshold: 0.2 }
     );
 
     cards.forEach((card) => observer.observe(card));
@@ -24,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //GALERIE
 jQuery(document).ready(function ($) {
     $(".galerie").click(function () {
-        $(".galerie").removeClass("active"); // Retirer la classe active de toutes les options
-        $(this).addClass("active"); // Ajouter la classe active à l'option cliquée
+        $(".galerie").removeClass("active"); 
+        $(this).addClass("active");
     });
 });
 
@@ -43,12 +41,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         },
-        { threshold: 0.1 } // Active l'animation lorsque 10% du titre est visible
+        { threshold: 0.2 }
     );
 
     titles.forEach((title) => observer.observe(title));
 });
 
+
+//FILTRE PROJETS
+document.addEventListener("DOMContentLoaded", () => {
+    const selectButton = document.querySelector("form select");
+
+    if (selectButton) {
+        setTimeout(() => {
+            selectButton.classList.add("appear");
+        }, 300);
+    }
+});
+
+
+//ARCHIVE PROJETS
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".project-card");
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+});
 
 
 

@@ -1,15 +1,14 @@
-/* Assurer que le hero dépasse les marges globales */
 .hero-section {
     position: relative;
-    width: 100vw; /* Prend toute la largeur de l'écran */
+    width: 100vw;
     left: 50%;
     right: 50%;
-    margin-left: -50vw; /* Élimine les marges */
-    margin-right: -50vw; /* Élimine les marges */
-    height: 100vh; /* Full height */
-    background-size: cover; /* L'image couvre tout l'écran */
-    background-position: center; /* Centrer l'image */
-    background-repeat: no-repeat; /* Pas de répétition */
+    margin-left: -50vw; 
+    margin-right: -50vw;
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,16 +17,16 @@
   }
   
   .hero-title {
-    font-size: 6rem; /* Taille du titre */
+    font-size: 6rem;
     color: var(--blanc);
     font-family: var(--baloo);
-    margin: 0 100px 10px 100px; /* Marges gauche et droite de 100px, espace réduit en bas */
+    margin: 0 100px 10px 100px;
 }
 
 .hero-subtitle {
-    font-size: 2.5rem; /* Taille du sous-titre */
+    font-size: 2.5rem;
     color: var(--blanc);
-    margin: 0 100px 30px 100px; /* Marges gauche et droite de 100px, espace réduit au-dessus */
+    margin: 0 100px 30px 100px; 
     margin-bottom: 80px;
 }
 
@@ -61,28 +60,24 @@
     color: var(--violet);
   }
   
-
-
-/* Conteneur principal */
 .scrolling-text {
-    width: 100%; /* Prend toute la largeur */
-    overflow: hidden; /* Cache le texte hors de la zone visible */
-    background-color: rgba(131, 60, 242, 0.5); /* Overlay violet semi-transparent */
-    padding: 10px 0; /* Espacement vertical */
-    position: relative; /* Pour contenir le contenu défilant */
-    color: var(--blanc); /* Texte blanc */
-    display: flex; /* Important pour aligner correctement */
+    width: 100%; 
+    overflow: hidden; 
+    background-color: rgba(131, 60, 242, 0.5);
+    padding: 10px 0;
+    position: relative;
+    color: var(--blanc); 
+    display: flex;
     align-items: center;
 }
 
-/* Contenu défilant */
 .scrolling-content {
-    display: flex; /* Permet d'afficher les spans à la suite */
-    white-space: nowrap; /* Empêche le texte de revenir à la ligne */
-    animation: scroll-infinite 35s linear infinite; /* Animation continue */
-    font-size: 1rem; /* Taille du texte */
-    font-family: var(--baloo); /* Police utilisée */
-    font-weight: var(--bold); /* Gras */
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-infinite 35s linear infinite; 
+    font-size: 1rem;
+    font-family: var(--baloo); 
+    font-weight: var(--bold);
 }
 
 .type a {
@@ -140,26 +135,20 @@
   }
 
 
-
-
-/* Animation de défilement infini */
 @keyframes scroll-infinite {
     from {
-        transform: translateX(0); /* Départ à gauche */
+        transform: translateX(0);
     }
     to {
-        transform: translateX(-50%); /* Déplacement de la moitié */
+        transform: translateX(-50%);
     }
 }
 
-/* Ajuste les spans pour qu'ils se collent parfaitement */
 .scrolling-content span {
-    flex-shrink: 0; /* Empêche la réduction de taille */
-    padding-right: 2rem; /* Espacement entre chaque cycle de texte */
+    flex-shrink: 0;
+    padding-right: 2rem; 
 }
 
-
-/* Animation fade-in */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -171,7 +160,6 @@
   }
 }
 
-/* Animation fade-in pour le scrolling text */
 @keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -183,12 +171,11 @@
   }
 }
 
-/* Classes pour animer les éléments */
 .hero-title,
 .hero-subtitle,
 .scrolling-text {
-  opacity: 0; /* Initialement invisible */
-  transform: translateY(50px); /* Déplacé vers le bas */
+  opacity: 0; 
+  transform: translateY(50px); 
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -197,57 +184,51 @@
 }
 
 .hero-subtitle.fade-in {
-  animation: fadeInUp 1.2s forwards; /* Début légèrement décalé */
+  animation: fadeInUp 1.2s forwards; 
 }
 
 .scrolling-text.fade-in {
-  animation: fadeInLeft 1.5s forwards; /* Animation de gauche */
+  animation: fadeInLeft 1.5s forwards;
 }
 
-
-/* Animation fadeInUp */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(50px); /* Départ avec un léger décalage vers le bas */
+        transform: translateY(50px); 
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Arrive à sa position normale */
+        transform: translateY(0); 
     }
 }
 
-/* Appliquer fadeInUp au bouton */
 .type a {
-    animation: fadeInUp 1.5s ease-out forwards; /* Durée plus courte pour un effet fluide */
-    opacity: 0; /* Invisible au départ */
-    transform: translateY(50px); /* Correspond au point de départ de l'animation */
+    animation: fadeInUp 1.5s ease-out forwards; 
+    opacity: 0; 
+    transform: translateY(50px);
 }
-
-
-
 
 @media screen and (max-width: 768px) {
   .hero-title {
-      font-size: 4rem; /* Réduit la taille du texte */
-      margin: 0 20px; /* Rapproche les marges sur mobile */
-      text-align: left; /* Aligne à gauche */
+      font-size: 4rem;
+      margin: 0 20px; 
+      text-align: left;
   }
 
   .hero-subtitle {
-      font-size: 1.8rem; /* Taille réduite pour le sous-titre */
-      margin: 10px 20px; /* Réduit l'espacement autour du sous-titre */
-      text-align: left; /* Aligne à gauche */
+      font-size: 1.8rem;
+      margin: 10px 20px;
+      text-align: left;
       margin-bottom: 100px;
   }
 
 
   .scrolling-text {
-      font-size: 0.9rem; /* Réduit la taille du texte défilant */
-      padding: 5px 0; /* Moins de padding pour économiser l'espace */
+      font-size: 0.9rem;
+      padding: 5px 0; 
   }
 
   .type a {
-    text-align: right; /* Aligne à gauche */
+    text-align: right; 
   }
 }

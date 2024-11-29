@@ -10,14 +10,10 @@
   <body>
     <header class="header" id="scroll">
       <div class="menu-header">
-        <!-- Logo -->
         <a href="<?php echo home_url(); ?>" class="logo">
           <img src="<?php echo get_template_directory_uri(); ?>/icons/logo-portfolio.svg" alt="Mon logo">
         </a>
       
-
-
-        <!-- Menu principal -->
         <nav class="menu_principal">
           <?php
           wp_nav_menu(array(
@@ -28,7 +24,6 @@
           ?>
         </nav>
 
-        <!-- Icônes des réseaux sociaux -->
         <div class="social-icons">
           <a href="https://www.behance.net/hugocolllin" target="_blank">
             <img src="<?php echo get_template_directory_uri(); ?>/icons/behance.svg" alt="Logo de Behance">

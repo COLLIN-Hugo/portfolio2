@@ -22,21 +22,6 @@ function add_webp_upload_mimes($mimes) {
 add_filter('upload_mimes', 'add_webp_upload_mimes');
 
 
-// Ajouter une taxonomie pour les projets
-function create_project_taxonomy() {
-    register_taxonomy(
-        'type_projet',  // Nom de la taxonomie (slug)
-        'projet',       // Le post type associé
-        array(
-            'label' => __('Type de Projet'),
-            'rewrite' => array('slug' => 'type-projet'),
-            'hierarchical' => true,
-        )
-    );
-}
-add_action('init', 'create_project_taxonomy');
-
-
 function theme_enqueue_styles() {
     wp_enqueue_style('single-projet', get_template_directory_uri() . '/css/single-projet.css');
 }
@@ -100,11 +85,11 @@ add_action('wp_enqueue_scripts', 'enqueue_alpine_script');
 //JS POUR CONTACT
 function enqueue_scroll_animation_script() {
     wp_enqueue_script(
-        'scroll-animation', // Nom unique du script
-        get_template_directory_uri() . '/js/contact.js', // Chemin vers le fichier JS
-        array(), // Pas de dépendances
-        '1.0', // Version
-        true // Charger dans le footer
+        'scroll-animation', 
+        get_template_directory_uri() . '/js/contact.js',
+        array(),
+        '1.0',
+        true 
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_scroll_animation_script');
@@ -117,3 +102,18 @@ function enqueue_footer_scroll_animation() {
 add_action('wp_enqueue_scripts', 'enqueue_footer_scroll_animation');
 
 
+//PAGE 404 
+function custom_404_scripts() {
+    if (is_404()) {
+        wp_enqueue_script('custom-404-js', get_template_directory_uri() . '/js/404.js', [], false, true);
+    }
+}
+add_action('wp_enqueue_scripts', 'custom_404_scripts');
+
+
+add_action('template_redirect', function () {
+    if (is_404()) {
+        include get_template_directory() . '/404.php';
+        exit;
+    }
+});

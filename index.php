@@ -8,7 +8,7 @@ get_header();
     <h1 class="hero-title">HUGO <span style="color: var(--violet);">COLLIN</span></h1>
     <p class="hero-subtitle">UI / UX DESIGNER</p>
     <div class="type" id="type01">
-        <a href="#type02">Scroll</a>
+        <a href="#competences">Scroll</a>
     </div>
     <div class="scrolling-text">
         <div class="scrolling-content">
@@ -73,7 +73,7 @@ get_header();
 
 
 <!-- Cards skills-->
-<div class="styled-title-container" id="type02">
+<div class="styled-title-container" id="competences">
     <h2 class="styled-title">Mes Compétences</h2>
 </div>
 <div class="cards-container">
@@ -167,7 +167,7 @@ get_header();
 </div>
 
 <!-- Contact-->
-<div class="styled-title-container">
+<div class="styled-title-container" id="contact">
     <h2 class="styled-title">Me contacter</h2>
 </div>
 <div class="contact-card scroll-animate"> <!-- Ajout de la classe scroll-animate -->

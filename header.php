@@ -32,5 +32,9 @@
             <img src="<?php echo get_template_directory_uri(); ?>/icons/linkedin.svg" alt="Logo de LinkedIn">
           </a>
         </div>
+
+        <div class="wrapper-burger">
+          <div class="burger" /> 
+        </div>
       </div>
     </header>

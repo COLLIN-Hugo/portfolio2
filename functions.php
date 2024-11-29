@@ -103,17 +103,21 @@ add_action('wp_enqueue_scripts', 'enqueue_footer_scroll_animation');
 
 
 //PAGE 404 
-function custom_404_scripts() {
-    if (is_404()) {
-        wp_enqueue_script('custom-404-js', get_template_directory_uri() . '/js/404.js', [], false, true);
-    }
-}
-add_action('wp_enqueue_scripts', 'custom_404_scripts');
-
-
 add_action('template_redirect', function () {
     if (is_404()) {
-        include get_template_directory() . '/404.php';
+        echo '<h1>WordPress détecte la page 404</h1>';
         exit;
     }
 });
+
+//JS POUR SINGLE PROJET
+function enqueue_custom_scripts() {
+    // Enregistrer et charger le fichier CSS principal du thème (si nécessaire)
+    wp_enqueue_style('theme-styles', get_template_directory_uri() . '/css/single-projet.css');
+
+    // Enregistrer et charger le fichier JS pour les animations
+    wp_enqueue_script('animations-script', get_template_directory_uri() . '/js/single-projet.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+

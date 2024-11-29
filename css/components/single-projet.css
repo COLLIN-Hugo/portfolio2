@@ -1,4 +1,3 @@
-
 /*PARTIE PRÉSENTATION*/
 /* Container principal */
 .single-project-container {
@@ -17,6 +16,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
+    max-width: 100%;
+
+}
+
+.project-description-custom img {
+    max-width: 100%;
 }
 
 /* Conteneur pour les infos supplémentaires */
@@ -27,8 +32,12 @@
     justify-content: flex-start; 
 }
 
+.project-description-custom .custom-project-title:before {
+    display: none;
+}
+
 .project-info-custom p {
-    padding: 15px 30px;
+    padding: 15px 40px;
     border-radius: 30px;
     background-color: var(--violet);
     color: var(--blanc);
@@ -41,7 +50,7 @@
 .project-image-custom img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -50,34 +59,11 @@
     line-height: 1.6;
 }
 
-/* Titre du projet avec effet de surlignage */
-.custom-project-title {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-    padding-bottom: 0.1em;
-}
-
-.custom-project-title::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.4em; 
-    background-color: var(--violet);
-    border-radius: 20px;
-    z-index: -1; 
-}
 
 /* Responsive pour mobile */
 @media (max-width: 768px) {
     .single-project-container {
         grid-template-columns: 1fr;
-    }
-
-    .project-info-custom {
-        justify-content: flex-start; 
     }
 }
 
@@ -98,23 +84,22 @@
 .concept-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
 }
 
 /* Élément individuel */
 .concept-item {
-    background-color: var(--blanc);
-    border-radius: 12px;
+    border-radius: 30px !important;
     overflow: hidden;
     text-align: center;
     padding: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+    position: relative;
 }
 
 .concept-item img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    border-radius: 30px;
+    aspect-ratio: 1/1;
 }
 
 .concept-caption {
@@ -122,6 +107,15 @@
     font-weight: var(--bold);
     color: var(--violet);
     margin-top: 10px;
+}
+
+.fixed-right {
+    margin-left: auto;
+}
+
+.description-card {
+    text-align: left;
+    margin: 0 !important;
 }
 
 /* Section mots-clés */
@@ -170,50 +164,13 @@
 /* Container principal */
 .section-container {
     display: grid;
-    grid-template-columns: 2fr 1fr; 
-    gap: 20px;
+    grid-template-columns: 1fr; 
     align-items: start;
     color: var(--blanc);
     font-family: var(--inter);
     position: relative;
     margin-bottom: 100px;
 }
-
-/* Titre */
-.section-title {
-    grid-column: 1 / -1;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-    padding-bottom: 0.1em;
-}
-
-.section-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: 100%;
-    height: 0.4em;
-    background-color: var(--violet);
-    border-radius: 20px;
-    z-index: -1;
-}
-
-
-
-.custom-project-title::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.4em; 
-    background-color: var(--violet);
-    border-radius: 20px;
-    z-index: -1; 
-}
-
 
 /* Description */
 .section-description {
@@ -225,20 +182,60 @@
 /* Images Container */
 .images-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes pour aligner les images */
-    gap: 20px;
-    margin-top: 40px; /* Ajoute de l'espace au-dessus des images */
-    justify-items: start; /* Aligne les images à gauche */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    margin-top: 10px; 
+    justify-items: start; 
 }
 
 .images-container img {
     width: 100%;
     height: auto;
-    max-width: 200px; /* Augmente la taille maximale des images */
-    border-radius: 10px;
+    max-width: 300px; 
+    border-radius: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.project-description {
+    margin-top: 120px;
+}
+
+@media screen and (min-width: 768px) {
+    .description-bilan {
+        max-width: 60%;
+    }
+
+    .images-container-secondary {
+        display: flex !important;
+        justify-content: end;
+    }
+}
 
 
+@media screen and (max-width: 768px) {
+    .project-info-custom {
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+        text-align: center;
+        margin-top: 48px;
 
+    }
+
+    .project-info-custom p {
+        margin: 0;
+    }
+}
+
+/* Animation d'apparition avec décalage */
+.fade-in, .scroll-in {
+    opacity: 0;
+    transform: translateY(20px); /* Décalage initial */
+    transition: all 0.6s ease-in-out;
+}
+
+/* Lorsqu'ils sont visibles */
+.fade-in-visible, .scroll-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

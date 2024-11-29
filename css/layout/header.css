@@ -8,6 +8,10 @@
   width: 100%; /* Full width */
 }
 
+.logo  {
+  width: 100px;
+}
+
 .logo img {
   width: 40px;
 }
@@ -17,6 +21,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 100%;
 }
 
 .menu_principal {
@@ -24,12 +29,13 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  max-width: 100%;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  border: 2px solid var(--blanc);
+  border: 1px solid #ffffff50 !important;
   border-radius: 30px;
   padding: 10px 40px;
   gap: 50px;
@@ -56,16 +62,59 @@
   height: 24px;
   display: flex;
   gap: 35px;
+  width: 100px;
 }
 
-.social-icons>a>img {
+.social-icons > a > img {
   height: 24px;
 }
 
 .social-icons a:hover img {
-  filter: invert(59%) sepia(79%) saturate(6640%) hue-rotate(253deg) brightness(102%) contrast(101%);
+  filter: invert(59%) sepia(79%) saturate(6640%) hue-rotate(253deg)
+    brightness(102%) contrast(101%);
 }
 
+.burger {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  position: relative;
+}
+.burger:before,
+.burger:after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+.burger:after {
+  bottom: 8px;
+}
+.burger:before {
+  top: 8px;
+}
+
+.wrapper-burger {
+  width: 25px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.cross {
+  background-color: transparent;
+}
+.cross:after {
+  transform: rotate(45deg);
+  bottom: 0;
+}
+.cross:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
 
 /* Animation du header */
 @keyframes slideInDown {
@@ -82,4 +131,43 @@
 .header {
   animation: slideInDown 1s ease-out forwards; /* Animation par défaut */
   opacity: 0; /* Initialement invisible */
+}
+
+@media screen and (min-width: 769px) {
+  .wrapper-burger {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    max-width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .menu_principal {
+    display: none;
+  }
+  
+  .display-menu {
+    display: flex !important;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+  }
+
+  .display-menu ul {
+    flex-direction: column;
+  }
+
+  .nav-menu {
+    gap: 24px;
+    border-radius: 16px;
+    padding: 16px 40px;
+  }
+
+  .type a {
+    right: 20px !important;
+  }
 }

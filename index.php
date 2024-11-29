@@ -1,5 +1,11 @@
 <?php
 get_header();
+
+if (!have_posts()) {
+    status_header(404);
+    include get_template_directory() . '/404.php';
+    exit;
+}
 ?>
 <body>
 
@@ -130,7 +136,7 @@ get_header();
 <div class="styled-title-container">
     <h2 class="styled-title">Mes derniers projets</h2>
 </div>
-<div class="galeries">
+<div class="scroll-in galeries">
     <?php
     $args = array(
         'post_type'      => 'projet', // Type de contenu personnalisé
@@ -140,12 +146,11 @@ get_header();
     $query = new WP_Query($args);
 
     if ($query->have_posts()) :
-        $first = true; // Variable pour marquer la première carte
+        $first = true; 
         while ($query->have_posts()) : $query->the_post();
-            $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); // URL de l'image
-            $title = get_the_title(); // Titre du projet
+            $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); 
+            $title = get_the_title(); 
             ?>
-            <!-- La première carte reçoit la classe "active" -->
             <div class="galerie <?php echo $first ? 'active' : ''; ?>" style="--optionBackground:url(<?php echo esc_url($image_url); ?>);">
                 <a href="<?php the_permalink(); ?>" class="galerie-link"></a>
                 <div class="shadow"></div>

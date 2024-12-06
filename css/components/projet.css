@@ -28,7 +28,7 @@
     border-radius: 40px;
     background-size: cover;
     transition: .4s;
-    z-index: 10; /* Priorité pour la card active */
+    z-index: 10;
 }
 
 .galerie .galerie-link {
@@ -64,12 +64,12 @@
     align-items: flex-start;
     color: white;
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-    opacity: 0; /* Masquer par défaut */
+    opacity: 0; 
     transition: opacity 0.3s ease;
 }
 
 .galerie.active .label {
-    opacity: 1; /* Afficher lorsque l'option est active */
+    opacity: 1; 
     transition: opacity 0.3s ease;
 }
 
@@ -86,14 +86,12 @@
     font-size: 0.9rem;
 }
 
-/* Animation d'apparition avec décalage */
 .scroll-in {
     opacity: 0;
-    transform: translateY(20px); /* Décalage initial */
+    transform: translateY(20px);
     transition: all 0.6s ease-in-out;
 }
 
-/* Lorsqu'ils sont visibles */
 .scroll-in-visible {
     opacity: 1;
     transform: translateY(0);

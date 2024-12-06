@@ -1,4 +1,7 @@
 <?php
+/*
+Template Name: 404
+*/
 get_header(); ?>
 <div class="page-404">
     <div class="error-container">

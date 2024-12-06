@@ -171,52 +171,13 @@ if (!have_posts()) {
     <?php endif; ?>
 </div>
 
-<!-- Contact-->
+
 <div class="styled-title-container" id="contact">
     <h2 class="styled-title">Me contacter</h2>
 </div>
-<div class="contact-card scroll-animate"> <!-- Ajout de la classe scroll-animate -->
-    <form action="" method="post" class="contact-form">
-        <div class="form-group">
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Votre email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Votre message" rows="5" required></textarea>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="submit-button" name="submit">Envoyer</button>
-        </div>
-    </form>
-</div>
-
-
-
 <?php
-// Vérification si le formulaire est soumis
-if (isset($_POST['submit'])) {
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
-
-    $to = "votre-email@example.com"; // Changez par votre adresse email
-    $subject = "Nouveau message de $name depuis le site";
-    $body = "Nom: $name\nEmail: $email\n\nMessage:\n$message";
-    $headers = "From: $email";
-
-    if (mail($to, $subject, $body, $headers)) {
-        echo '<script>alert("Votre message a été envoyé avec succès !");</script>';
-    } else {
-        echo '<script>alert("Une erreur est survenue. Veuillez réessayer.");</script>';
-    }
-}
+echo do_shortcode('[contact-form-7 id="fd97bf5" title="Formulaire de contact 1"]');
 ?>
-
 
 
 </body>

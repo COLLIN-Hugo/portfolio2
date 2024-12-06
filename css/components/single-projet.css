@@ -1,5 +1,4 @@
 /*PARTIE PRÉSENTATION*/
-/* Container principal */
 .single-project-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -9,7 +8,7 @@
     margin-top: 50px;
     margin-bottom: 100px;
 }
-/* Section Image */
+
 .project-image-custom {
     margin-top: 30px;
     position: relative;
@@ -24,7 +23,6 @@
     max-width: 100%;
 }
 
-/* Conteneur pour les infos supplémentaires */
 .project-info-custom {
     display: flex;
     gap: 15px;
@@ -46,7 +44,6 @@
     margin-right: 10px; 
 }
 
-/* Image de projet */
 .project-image-custom img {
     width: 100%;
     height: auto;
@@ -54,13 +51,10 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Section Description */
 .project-description-custom {
     line-height: 1.6;
 }
 
-
-/* Responsive pour mobile */
 @media (max-width: 768px) {
     .single-project-container {
         grid-template-columns: 1fr;
@@ -69,10 +63,7 @@
 
 
 
-
-
 /*PARTIE CONCEPTION*/
-/* Conteneur principal */
 .concept-container {
     margin: 50px auto;
     max-width: 1200px;
@@ -80,13 +71,11 @@
     font-family: var(--inter);
 }
 
-/* Grille bien rangée */
 .concept-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* Élément individuel */
 .concept-item {
     border-radius: 30px !important;
     overflow: hidden;
@@ -118,7 +107,6 @@
     margin: 0 !important;
 }
 
-/* Section mots-clés */
 .concept-keywords {
     display: flex;
     justify-content: center;
@@ -135,7 +123,6 @@
     font-weight: var(--bold);
 }
 
-/* Description */
 .concept-description {
     background-color: var(--violet);
     color: var(--blanc);
@@ -147,7 +134,6 @@
     margin-top: 20px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .concept-grid {
         grid-template-columns: 1fr;
@@ -157,11 +143,7 @@
 
 
 
-
-
-
 /*PARTIE BILAN*/
-/* Container principal */
 .section-container {
     display: grid;
     grid-template-columns: 1fr; 
@@ -172,14 +154,12 @@
     margin-bottom: 100px;
 }
 
-/* Description */
 .section-description {
     line-height: 1.6;
     color: var(--blanc);
     padding-right: 20px;
 }
 
-/* Images Container */
 .images-container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -227,14 +207,12 @@
     }
 }
 
-/* Animation d'apparition avec décalage */
 .fade-in, .scroll-in {
     opacity: 0;
-    transform: translateY(20px); /* Décalage initial */
+    transform: translateY(20px); 
     transition: all 0.6s ease-in-out;
 }
 
-/* Lorsqu'ils sont visibles */
 .fade-in-visible, .scroll-in-visible {
     opacity: 1;
     transform: translateY(0);

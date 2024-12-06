@@ -2,20 +2,17 @@
     background-color: var(--gris); 
     padding: 30px;
     border-radius: 30px;
-    max-width: 600px;
+    max-width: 700px;
+    width: 90%; 
     margin: 20px auto;
-    text-align: center; 
-}
-
-.contact-title {
-    font-family: var(--baloo);
-    font-size: 1.8rem;
-    color: var(--blanc);
-    text-align: center; 
-    margin-bottom: 20px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .contact-form {
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -34,9 +31,10 @@ label {
     font-weight: var(--bold);
     font-size: 1.2rem;
     color: var(--blanc);
-    margin-bottom: 10px;
+    margin-bottom: 250px;
     text-align: left; 
 }
+
 
 input, textarea {
     padding: 15px;
@@ -71,10 +69,9 @@ input:focus, textarea:focus {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease; 
     text-align: center; 
-    width: auto;
-    margin: 0 auto; 
+    margin: 0 auto; /* Centre horizontalement le bouton */
     margin-top: 30px;
-    align-self: center; 
+    display: block; /* S'assurer qu'il se comporte comme un élément block pour le centrage */
 }
 
 .submit-button:hover {
@@ -87,27 +84,23 @@ input:focus, textarea:focus {
     outline-offset: 3px;
 }
 
-
-/* Animation fade-in-up */
 @keyframes fadeInUpOnScroll {
     from {
         opacity: 0;
-        transform: translateY(50px); /* Position initiale */
+        transform: translateY(50px); 
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Position finale */
+        transform: translateY(0); 
     }
 }
 
-/* Classe pour les éléments invisibles par défaut */
 .scroll-animate {
-    opacity: 0; /* Rendre invisible par défaut */
-    transform: translateY(50px); /* Déplacement initial */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition fluide */
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Classe déclenchant l'animation */
 .scroll-animate.visible {
     animation: fadeInUpOnScroll 0.8s ease-out forwards;
 }
@@ -119,35 +112,35 @@ input:focus, textarea:focus {
     .contact-card {
         padding: 20px;
         border-radius: 20px;
-        max-width: 90%; /* Adapte la largeur à l'écran */
+        max-width: 90%;
         margin: 10px auto;
-        box-sizing: border-box; /* Évite les débordements */
+        box-sizing: border-box; 
     }
 
     .contact-form {
-        gap: 15px; /* Réduit l'espacement entre les champs */
-        width: 100%; /* S'assure que le formulaire occupe toute la largeur */
+        gap: 15px; 
+        width: 100%;
     }
 
     .form-group {
-        width: 100%; /* Les champs prennent toute la largeur */
-        max-width: 100%; /* Évite les débordements */
+        width: 100%; 
+        max-width: 100%; 
     }
 
     input, textarea {
-        padding: 10px; /* Réduit légèrement le padding */
-        font-size: 0.9rem; /* Taille de police adaptée */
+        padding: 10px; 
+        font-size: 0.9rem; 
         border-radius: 5px;
-        width: 100%; /* Respecte la largeur du conteneur */
-        box-sizing: border-box; /* Inclut le padding dans la largeur */
+        width: 100%; 
+        box-sizing: border-box; 
     }
 
     .submit-button {
-        padding: 10px 20px; /* Ajuste la taille du bouton */
-        font-size: 1.1rem; /* Réduit la taille de la police */
-        border-radius: 20px; /* Rondit un peu plus les coins */
-        max-width: 100%; /* Le bouton s'adapte à la largeur */
-        width: 100%; /* Remplit toute la largeur du conteneur */
+        padding: 10px 20px; 
+        font-size: 1.1rem;
+        border-radius: 20px;
+        max-width: 100%; 
+        width: 100%;
         margin-top: 20px;
     }
 }

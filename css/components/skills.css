@@ -1,11 +1,9 @@
-/* Container */
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
-/* Card Styles */
 .card {
     background-color: var(--gris);
     border-radius: 30px;

@@ -108,7 +108,7 @@ if (!have_posts()) {
             <img src="<?php echo get_template_directory_uri(); ?>/icons/Seo.svg" alt="logo pour représenter le SEO">
         </div>
         <h3 class="card-title">SEO</h3>
-        <p class="card-text">je sais pas quoi mettre</p>
+        <p class="card-text">Optimisation technique / Suivi des performances / Outils SEO</p>
     </div>
 
     <!-- Quatrième card -->

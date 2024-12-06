@@ -3,9 +3,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  position: relative; /* Le header reste au-dessus */
-  z-index: 10; /* S'assurer que le header est devant l'image */
-  width: 100%; /* Full width */
+  position: relative; 
+  z-index: 10; 
+  width: 100%; 
 }
 
 .logo  {
@@ -129,8 +129,8 @@
 }
 
 .header {
-  animation: slideInDown 1s ease-out forwards; /* Animation par défaut */
-  opacity: 0; /* Initialement invisible */
+  animation: slideInDown 1s ease-out forwards; 
+  opacity: 0; 
 }
 
 @media screen and (min-width: 769px) {

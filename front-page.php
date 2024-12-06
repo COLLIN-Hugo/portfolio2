@@ -139,8 +139,8 @@ if (!have_posts()) {
 <div class="scroll-in galeries">
     <?php
     $args = array(
-        'post_type'      => 'projet', // Type de contenu personnalisé
-        'posts_per_page' => 5,        // Limiter à 5 projets
+        'post_type'      => 'projet', 
+        'posts_per_page' => 5,        
     );
 
     $query = new WP_Query($args);

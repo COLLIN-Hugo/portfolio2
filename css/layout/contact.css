@@ -69,18 +69,18 @@ input:focus, textarea:focus {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease; 
     text-align: center; 
-    margin: 0 auto; /* Centre horizontalement le bouton */
+    margin: 0 auto; 
     margin-top: 30px;
-    display: block; /* S'assurer qu'il se comporte comme un élément block pour le centrage */
+    display: block; 
 }
 
 .submit-button:hover {
-    background-color: #6a2db9; 
+    background-color: var(--violet); 
     transform: scale(1.05); 
 }
 
 .submit-button:focus {
-    outline: 2px solid #6a2db9; 
+    outline: 2px solid var(--violet); 
     outline-offset: 3px;
 }
 
